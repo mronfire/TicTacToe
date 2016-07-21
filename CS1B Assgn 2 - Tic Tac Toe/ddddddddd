@@ -1,0 +1,24 @@
+void GetComputerPlay(char boardAr[][NUM_COLS], //IN - Game board
+			         char token)			   //IN - Players token
+{
+
+	bool invalid;
+	short row;
+	short col;
+
+	invalid = false;
+
+	do
+	{
+		row = rand() % 3;
+		col = rand() % 3;
+
+		if(isspace(boardAr[row][col]))
+		{
+			invalid = true;
+		}
+	}while(!invalid);
+
+	boardAr[row][col] = token;
+
+}
